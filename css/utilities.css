@@ -159,6 +159,11 @@ h2::selection {
   background: url(../assets/project/project-four.png) center center/cover;
 }
 
+/* Project 5 */
+.card:nth-child(5) {
+  background: url(../assets/project/project-five.png) center center/cover;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .header-container {

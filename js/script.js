@@ -59,3 +59,23 @@ if (currentTheme) {
   }
 }
 
+// Add preloader
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  const minimumTime = 3000; // Minimum time in milliseconds (2 seconds)
+
+  const startTime = performance.now();
+
+  const hidePreloader = () => {
+    const elapsedTime = performance.now() - startTime;
+    const remainingTime = Math.max(0, minimumTime - elapsedTime);
+
+    setTimeout(() => {
+      preloader.style.display = "none"; // Hide the preloader
+      document.body.classList.add("loaded"); // show all content
+    }, remainingTime);
+  };
+
+  hidePreloader();
+});
